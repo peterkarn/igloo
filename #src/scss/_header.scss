@@ -1,0 +1,205 @@
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 34px 0 0;
+  width: 100%;
+  min-height: 94px;
+  color: #f4f4f4;
+  transition: all 0.5s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 65%;
+    width: 100px;
+    height: 2px;
+    background-color: #fff;
+
+    @media screen and (max-width: $xlarge) {
+      width: 50px;
+    }
+
+    @media screen and (max-width: $medium) {
+      display: none;
+    }
+  }
+
+  &.scrollable {
+    @media screen and (max-width: $medium) {
+      position: fixed;
+      z-index: 20;
+      box-shadow: 2px 2px 5px rgba(#000, 0.5);
+      background-color: rgba(#0ba3d3, 0.9);
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    padding: 10px 0 0;
+    min-height: auto;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    z-index: 8;
+    margin-top: 3px;
+    transition: filter 0.7s;
+
+    &.blured {
+      filter: blur(10px);
+    }
+
+    @media screen and (max-width: $medium) {
+      margin-top: 10px;
+      margin-right: auto;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: -30px;
+    top: -10px;
+    bottom: 0;
+    display: none;
+    padding: 64px 32px 48px 40px;
+    width: 100%;
+    max-width: 500px;
+    color: #000;
+    background-color: #fff;
+    transform: translateX(-1000%);
+    transition: transform 0.5s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100px;
+      height: 100px;
+    }
+
+    @media screen and (max-width: $medium) {
+      display: block;
+    }
+
+    &.active {
+      z-index: 100;
+      min-height: 100vh;
+      transform: translateX(0);
+    }
+  }
+
+  &__nav-close {
+    position: absolute;
+    right: 32px;
+    top: 23px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/icons/close.svg");
+    background-position: center;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-end;
+
+    @media screen and (max-width: $small) {
+      align-items: flex-start;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-right: 123px;
+    margin-left: auto;
+
+    @media screen and (max-width: $xlarge) {
+      margin-right: 50px;
+    }
+
+    @media screen and (max-width: $medium) {
+      display: none;
+    }
+  }
+
+  &__actions-item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    min-width: 30px;
+    background-position: left center;
+    background-size: initial;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(3px);
+    }
+
+    &_inst {
+      margin-right: 44px;
+      background-image: url("../img/icons/instagram-wh.svg");
+    }
+
+    &_phone {
+      background-image: url("../img/icons/phone-wh.svg");
+
+      a {
+        padding-top: 4px;
+        padding-left: 40px;
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__btn {
+    margin-top: 51px;
+    margin-bottom: 40px;
+    max-width: 230px;
+  }
+}
+
+.menu-icon {
+  z-index: 9;
+  display: none;
+  overflow: hidden;
+  margin-top: -5px;
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons/menu-icon.svg");
+  transition: filter 0.3s;
+  cursor: pointer;
+
+  &.blured {
+    filter: blur(10px);
+  }
+
+  @media screen and (max-width: $medium) {
+    display: block;
+  }
+}
